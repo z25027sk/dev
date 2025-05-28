@@ -1,0 +1,21 @@
+name: Automated testing of GCD calculation script
+
+on:
+  push:
+    paths:
+      - 'calc_gcd.sh'
+      - 'test_calc_gcd.sh'
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Make test script executable
+        run: chmod +x gcd.sh test_calc_gcd.sh
+
+      - name: Run GCD script tests
+        run: ./test_calc_gcd.sh
