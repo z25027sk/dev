@@ -1,0 +1,14 @@
+name: Manual  testing of GCD calculation script
+
+on: [ workflow_dispatch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Make test script executable
+        run: chmod +x calc_gcd.sh test_calc_gcd.sh
+
+      - name: Run GCD script tests
+        run: ./test_calc_gcd.sh
