@@ -24,6 +24,7 @@ https://github.com/z25027sk/dev.git
 └── .github/
         └── workflows/
                 └── test_definition.yml     # GitHub Actionsの定義ファイル
+                └── test_definition_manual.yml     # GitHub Actionsの手動実行用定義ファイル
 
 ##  ログ確認
 - calc_gcd.log に実行履歴が以下形式で追記される。
