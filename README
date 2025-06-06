@@ -12,6 +12,7 @@ https://github.com/z25027sk/dev.git
 - 引数に対してバリデーションを実施する（引数の数・自然数チェック）
 - エラー・実行結果をログファイルに出力する。
 - Git連携して、GitHub Actions 上で自動テストが実行可能。
+- Git連携して、GitHub Actions 上で手動テストが実行可能。
 - v2の改修を行い、桁数については20以上を取り扱えなかったため、bcコマンドに修正する。
   授業サーバでは事前にインストール済みでコマンドが通ることを確認(任意精度で計算可能)
 
@@ -40,6 +41,10 @@ https://github.com/z25027sk/dev.git
 1. リポジトリを GitHub に push
 2. .github/workflows/test_definition.yml が自動的に実行
 3. プッシュや Pull Request 時に gcd.sh / test_calc_gcd.sh の動作検証
+
+##自動テスト実行(GitHub Actions利用) による手動テスト
+1. github/workflows/test_definition_manual.yml が自動的に実行
+2. GitHubの画面より gcd.sh / test_calc_gcd.sh の動作検証
 
 ###動作確認
 - テストスクリプトで定義した自動テストケースについて、Actions タブから確認可能（全テスト結果）
