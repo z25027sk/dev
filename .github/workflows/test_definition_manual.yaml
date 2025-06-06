@@ -1,14 +1,27 @@
-name: Manual  testing of GCD calculation script
+name: GCD Script Manual Test
 
-on: [ workflow_dispatch ]
+on:
+  workflow_dispatch:
+
+  push:
+    paths:
+      - 'calc_gcd.sh'
+      - 'test_calc_gcd.sh'
+  pull_request:
+    paths:
+      - 'calc_gcd.sh'
+      - 'test_calc_gcd.sh'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Make test script executable
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Make scripts executable
         run: chmod +x calc_gcd.sh test_calc_gcd.sh
 
-      - name: Run GCD script tests
+      - name: Run test suite
         run: ./test_calc_gcd.sh
